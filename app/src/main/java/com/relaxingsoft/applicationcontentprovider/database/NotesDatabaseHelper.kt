@@ -11,7 +11,7 @@ class NotesDatabaseHelper(
     override fun onCreate(db: SQLiteDatabase?) {
         db?.execSQL( "CREATE TABLE $TABLE_NOTES (" +
                 "$_ID INTEGER NOT NULL PRIMARY KEY, " +
-                "$TITLES_NOTES TEXT NOT NULL, " +
+                "$TITLE_NOTES TEXT NOT NULL, " +
                 "$DESCRIPTION_NOTES TEXT NOT NULL)")
     }
 
@@ -21,7 +21,7 @@ class NotesDatabaseHelper(
 
     companion object {
         const val TABLE_NOTES: String = "Notes"
-        const val TITLES_NOTES: String = "title"
+        const val TITLE_NOTES: String = "title"
         const val DESCRIPTION_NOTES: String = "description"
     }
 }

@@ -9,6 +9,7 @@ import androidx.loader.content.Loader
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.relaxingsoft.applicationcontentprovider.database.NotesDatabaseHelper.Companion.TITLE_NOTES
 import com.relaxingsoft.applicationcontentprovider.database.NotesProvider.Companion.URI_NOTES
 
 class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks< Cursor > {
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks< Cursor 
         noteRecyclerView.adapter = adapter
     }
 
-    override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> = CursorLoader( this, URI_NOTES, null, null, null, "TITLES_NOTE" )
+    override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> = CursorLoader( this, URI_NOTES, null, null, null, TITLE_NOTES )
 
     override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
         if ( data != null ) {
